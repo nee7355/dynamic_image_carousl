@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image Slider</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <button onclick="prev()">prev</button>
+        <img src="../../img/img1.jpg" alt="" style="width:500px; height: 400px;">
+       
+        <button onclick="next()">Next</button>
+
+
+
+        <script>
+        var photos = ["../../img/img1.jpg", "../../img/img2.jpeg", "../../img/img3.jpeg", "../../img/img4.jpg"]
+
+var imgTag = document.querySelector("img");
+var count = 0;
+
+function next(){
+    count++;
+    if(count >= photos.length){
+        count = 0;
+        imgTag.src = photos[count];
+    }else{
+        imgTag.src = photos[count];
+    }
+}
+
+function prev(){
+    count--;
+    if(count < 0){
+        count = photos.length -1;
+        imgTag.src = photos[count];
+    }else{
+        imgTag.src = photos[count];
+    }
+}
+       </script>
+        <script src="script.js"></script>
+    </body>
+</html>
